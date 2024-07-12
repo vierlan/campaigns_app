@@ -1,1 +1,16 @@
-<h1>campaign</h1>
+<h1>Votes for <%= @campaign.name %></h1>
+<%= link_to "back", campaigns_path %>
+
+<ul>
+  <% if @candidates.present? %>
+    <% @candidates.each do |candidate| %>
+      <li>
+        <%= candidate.name %>:
+        <%= @votes_by_candidate[candidate.name] || 0 %> votes
+      </li>
+    <% end %>
+    <li>Votes Out of time: <%= @votes_out_of_time %></li>
+  <% else %>
+    <li>No candidates found.</li>
+  <% end %>
+</ul>
