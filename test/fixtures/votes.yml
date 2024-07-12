@@ -2,14 +2,10 @@
 
 one:
   validity: MyString
-  timestamp: 1
-  not_readable: false
   campaign: one
   candidate: one
 
 two:
   validity: MyString
-  timestamp: 1
-  not_readable: false
   campaign: two
   candidate: two

@@ -36,7 +36,6 @@ def vote_log_parse(filepath)
       candidate = Candidate.find_or_create_by(name: choice)
     else
       candidate = Candidate.find_or_create_by(name: 'Unknown')
-      not_readable = true
     end
 
     campaign_name = Campaign.find_or_create_by(name: campaign)
@@ -44,9 +43,7 @@ def vote_log_parse(filepath)
     Vote.create(
       campaign: campaign_name,
       candidate: candidate,
-      validity: validity,
-      timestamp: timestamp,
-      not_readable: not_readable
+      validity: validity
     )
   end
 end
